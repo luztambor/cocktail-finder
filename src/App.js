@@ -1,37 +1,37 @@
 import styled from 'styled-components';
+import {Header, SearchBar, SearchInput} from './components/headerComponents'
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
 `;
 
-const Header = styled.div`
-  color: white;
-  background-color: black;
+const ResultListContainer = styled.div`
   display: flex;
   flex-direction: row;
-  padding: 16px;
-  font-size: 20px;
+  flex-wrap: wrap;
+  padding: 36px;
+  justify-content: space-evenly;
+`;
+
+const ResultContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin: 16px 0;
+  width: 300px;
+  box-shadow: 0 3px 10px 0 #aaa;
+  cursor: pointer;
+`;
+
+const ResultImage = styled.img`
+`;
+
+const ResultName = styled.span`
+  font-size: 18px;
   font-weight: bold;
-  align-content: center;
-  position: -webkit-sticky;
-  position: sticky;
-`;
-
-const SearchBar = styled.div`
-  display: flex;
-  flex-direction: row;
-  position: relative;
-  justify-content: center;
-  align-content: center;
-  margin: auto;
-  box-sizing: border-box;
-  padding-top:16px;
-`;
-
-const SearchInput = styled.input`
-  height:36px;
-  font-size: 26px;
+  margin: 10px 0;
+  text-align: center;
 `;
 
 function App() {
@@ -41,9 +41,51 @@ function App() {
         Cocktail Finder
       </Header>
       <SearchBar>
-        <SearchInput/>
+        <SearchInput placeholder="Search by name or ingredient..."/>
       </SearchBar>
       Hello, world!
+      <ResultListContainer>
+        <ResultContainer>
+          <ResultImage src="logo192.png" />
+          <ResultName>Name Here</ResultName>
+        </ResultContainer>
+        <ResultContainer>
+          <ResultImage src="logo192.png" />
+          <ResultName>Name Here</ResultName>
+        </ResultContainer>
+        <ResultContainer>
+          <ResultImage src="logo192.png" />
+          <ResultName>Name Here</ResultName>
+        </ResultContainer>
+        <ResultContainer>
+          <ResultImage src="logo192.png" />
+          <ResultName>Name Here</ResultName>
+        </ResultContainer>
+        <ResultContainer>
+          <ResultImage src="logo192.png" />
+          <ResultName>Name Here</ResultName>
+        </ResultContainer>
+        <ResultContainer>
+          <ResultImage src="logo192.png" />
+          <ResultName>Name Here</ResultName>
+        </ResultContainer>
+        <ResultContainer>
+          <ResultImage src="logo192.png" />
+          <ResultName>Name Here</ResultName>
+        </ResultContainer>
+        <ResultContainer>
+          <ResultImage src="logo192.png" />
+          <ResultName>Name Here</ResultName>
+        </ResultContainer>
+        <ResultContainer>
+          <ResultImage src="logo192.png" />
+          <ResultName>Name Here</ResultName>
+        </ResultContainer>
+        <ResultContainer>
+          <ResultImage src="logo192.png" />
+          <ResultName>Name Here</ResultName>
+        </ResultContainer>
+      </ResultListContainer>
     </Container>
   );
 }
