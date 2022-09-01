@@ -1,37 +1,10 @@
 import styled from 'styled-components';
-import {Header, SearchBar, SearchInput} from './components/headerComponents'
+import { Header, SearchBar, SearchInput } from './components/headerComponents';
+import { ResultListContainer, ResultContainer, ResultImage, ResultName } from './components/resultComponents';
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-`;
-
-const ResultListContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  padding: 36px;
-  justify-content: space-evenly;
-`;
-
-const ResultContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
-  margin: 16px 0;
-  width: 300px;
-  box-shadow: 0 3px 10px 0 #aaa;
-  cursor: pointer;
-`;
-
-const ResultImage = styled.img`
-`;
-
-const ResultName = styled.span`
-  font-size: 18px;
-  font-weight: bold;
-  margin: 10px 0;
-  text-align: center;
 `;
 
 function App() {
