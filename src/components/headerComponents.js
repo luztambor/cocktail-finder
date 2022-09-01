@@ -2,13 +2,13 @@ import styled from 'styled-components';
 
 export const Header = styled.div`
   color: white;
-  background-color: black;
+  background-color: purple;
   display: flex;
   flex-direction: row;
   padding: 16px;
-  font-size: 20px;
-  font-weight: bold;
+  font-size: 28px;
   align-content: center;
+  justify-content: center;
   position: -webkit-sticky;
   position: sticky;
 `;
