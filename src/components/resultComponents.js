@@ -4,7 +4,7 @@ export const ResultListContainer = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  padding: 36px;
+  padding: 16px;
   justify-content: space-evenly;
 `;
 

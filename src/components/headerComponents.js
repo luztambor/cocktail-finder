@@ -20,7 +20,7 @@ export const SearchBar = styled.div`
   justify-content: center;
   align-content: center;
   margin: auto;
-  padding-top:16px;
+  padding-top:32px;
   box-sizing: border-box;
 `;
 
