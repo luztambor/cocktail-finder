@@ -9,15 +9,27 @@ const Container = styled.div`
   flex-direction: column;
 `;
 
+const ResultComponent = (props) => {
+  console.log(props);
+  const {recipeObj} = props;
+  return (
+    <ResultContainer>
+      <ResultImage src={recipeObj.strDrinkThumb} />
+      <ResultName>{recipeObj.strDrink}</ResultName>
+    </ResultContainer>
+  );
+};
+
+
 function App() {
 
   const [timeoutId, newTimeoutId] = useState();
+  const [recipeList, newRecipeList] = useState([]);
 
-  const fetchRecipe = (searchQuery) => {
-    Axios.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchQuery}`)
-    .then( (response) => {
-      console.log(response);
-    });
+  const fetchRecipe = async (searchQuery) => {
+    const response = await Axios.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchQuery}`)
+    console.log(response.data.drinks);
+    newRecipeList(response.data.drinks);
   };
 
   const onTextChange = (event) => {
@@ -34,48 +46,11 @@ function App() {
       <SearchBar>
         <SearchInput placeholder="Search by name or ingredient..." onChange={onTextChange} />
       </SearchBar>
-      Hello, world!
       <ResultListContainer>
-        <ResultContainer>
-          <ResultImage src="logo192.png" />
-          <ResultName>Name Here</ResultName>
-        </ResultContainer>
-        <ResultContainer>
-          <ResultImage src="logo192.png" />
-          <ResultName>Name Here</ResultName>
-        </ResultContainer>
-        <ResultContainer>
-          <ResultImage src="logo192.png" />
-          <ResultName>Name Here</ResultName>
-        </ResultContainer>
-        <ResultContainer>
-          <ResultImage src="logo192.png" />
-          <ResultName>Name Here</ResultName>
-        </ResultContainer>
-        <ResultContainer>
-          <ResultImage src="logo192.png" />
-          <ResultName>Name Here</ResultName>
-        </ResultContainer>
-        <ResultContainer>
-          <ResultImage src="logo192.png" />
-          <ResultName>Name Here</ResultName>
-        </ResultContainer>
-        <ResultContainer>
-          <ResultImage src="logo192.png" />
-          <ResultName>Name Here</ResultName>
-        </ResultContainer>
-        <ResultContainer>
-          <ResultImage src="logo192.png" />
-          <ResultName>Name Here</ResultName>
-        </ResultContainer>
-        <ResultContainer>
-          <ResultImage src="logo192.png" />
-          <ResultName>Name Here</ResultName>
-        </ResultContainer>
-        <ResultContainer>
-          <ResultImage src="logo192.png" />
-          <ResultName>Name Here</ResultName>
-        </ResultContainer>
+        {recipeList.length &&
+        recipeList.map((drinkObj) => (
+        <ResultComponent recipeObj={drinkObj} />
+        ))};
       </ResultListContainer>
     </Container>
   );
